@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Terapia - Physical Therapy Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show dashboard bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="wrapper">
+        <div class="container-fluid hh position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-2 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0 editedHeading">
+                    <img src="img/mainLog.png" style="height: 150px;"
+                        alt="Healing hand physiotherapy and rehabilitation center">
+                    <div>
+                        <h1 class="text-primary m-0">HealingHand</h1>
+                        <span>Physiotherapy and rehabilitation center </span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link ">Home</a>
+                    </div>
+                    <a onclick="logOutUser()"
+                        class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Log Out</a>
+                </div>
+            </nav>
+
+
+
+        </div>
+        <div class="container-fluid contact py-1 py-lg-5 px-2">
+            <div class="container p-3 px-1">
+                <div class="col-12 my-1 my-lg-5">
+                    <div class="utf_dashboard_list_box table-responsive recent_booking h-100 ">
+                        <div class="d-flex flex-column flex-md-row">
+                            <h4>Recent Booking</h4><span class="ms-0 ms-md-3"><input id="searchUser"  onkeydown="setTimeout(searchUser(), 1500) " type="text"><i class="bi bi-search"></i></span>
+                        </div>
+                        <div class="dashboard-list-box table-responsive invoices with-icons">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <th>Date</th>
+                                        <th>Contact</th>
+                                        <th>View</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="userInfo">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="userFormInfo" class="admin-container">
+
+        </div>
+
+        <div>
+            <div id="errorMessage" class="error-container">
+                <header>
+                    <h1>Delete</h1>
+                    <i class="fa-solid fa-xmark"></i>
+                </header>
+                <div class="error-content">
+                    Are you sure you want to delete this item?
+                </div>
+                <div class="error-buttons">
+                    <button id="cancelDelete">Cancle</button>
+                    <button id="sureDelete">Delete</button>
+                </div>
+                <div id="deleteSpinner"
+                    class="show dashboard bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-4 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-4">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <a href="index.html" class="navbar-brand mb-2 mb-md-0 p-0 editedHeading">
+                                <img src="img/mainLog.png" style="height: 100px;"
+                                    alt="Healing hand physiotherapy and rehabilitation center">
+                                <div>
+                                    <h1 class="text-primary m-0">HealingHand</h1>
+                                    <span>Physiotherapy and rehabilitation center </span>
+                                </div>
+                            </a>
+                            <p>Best Physiotherapy Center in Mohali. Get personalised physiotherapy and
+                                rehabilitation with
+                                all modern equipment. Get consultation now!
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-share fa-2x text-white me-2"></i>
+                                <a class="btn-square btn btn-primary text-white rounded-circle mx-1"
+                                    href="https://www.facebook.com/profile.php?id=61558934893523&mibextid=kFxxJD"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <p class="btn-square btn btn-primary text-white rounded-circle mx-1 mb-0" href=""><i
+                                        class="fab fa-twitter"></i></p>
+                                <p class="btn-square btn btn-primary text-white rounded-circle mx-1 mb-0" href=""><i
+                                        class="fab fa-instagram"></i></p>
+                                <p class="btn-square btn btn-primary text-white rounded-circle mx-1 mb-0" href=""><i
+                                        class="fab fa-linkedin-in"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Quick Links</h4>
+                            <a href="about.html"><i class="fas fa-angle-right me-2"></i> About Us</a>
+                            <a href="service.html"><i class="fas fa-angle-right me-2"></i> Services</a>
+                            <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                            <a href="privacyPolicy.html"><i class="fas fa-angle-right me-2"></i>Privacy Policy</a>
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Special Expertise</h4>
+                            <a><i class="fas fa-angle-right me-2"></i> Cupping</a>
+                            <a><i class="fas fa-angle-right me-2"></i> Needling</a>
+                            <a><i class="fas fa-angle-right me-2"></i> IASTM</a>
+                            <a><i class="fas fa-angle-right me-2"></i> Kinesiotapping</a>
+                            <a><i class="fas fa-angle-right me-2"></i> Neuro-Rehabilation</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Contact Info</h4>
+                            <a href="https://maps.app.goo.gl/NExsetGTTcMDASt76"><i
+                                    class="fa fa-map-marker-alt me-2"></i>
+                                F2-105,Wave Estate, Ground Floor, Sector 85, Mohali
+                                Near Gate No :2</a>
+                            <a href="mailto:healinghandphysiotherapyandreh@gamail.com"><i
+                                    class="fas fa-envelope me-2"></i>healinghandphysiotherapy andreh@gamail.com</a>
+                            <a href="tel:+917988900566"><i class="fas fa-phone me-2"></i>+91 79889 00566</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
